@@ -2,6 +2,16 @@
 
 A fast, static, blue-themed personal brand hub with light/dark mode and zero backend.
 
+## ✨ Features
+
+- 🎨 **Light/Dark Theme** - Auto-detects system preference + manual toggle
+- 📱 **Responsive Grid** - Adapts to all screen sizes (3 → 4 → 6 columns)
+- ⚡ **Zero Backend** - Static site, instant load, CDN-ready
+- ♿ **Accessible** - WCAG 2.1 AA compliant, keyboard navigable
+- 🎭 **Confetti Easter Egg** - Fun interactive element (respects reduced motion)
+- 🧩 **Easy Content Updates** - Single `content.ts` file to manage everything
+- 🎯 **Future-Proof** - Newsletter placeholder ready for Beehiiv/ConvertKit
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -48,16 +58,26 @@ vercel
 ```
 .
 ├── app/
-│   ├── content.ts          # Single source of truth for all content
-│   ├── layout.tsx           # Root layout with theme provider
-│   ├── page.tsx             # Main page
-│   ├── globals.css          # Global styles & theme variables
-│   └── providers/
-│       └── ThemeProvider.tsx
+│   ├── components/          # UI components
+│   │   ├── HeroHeader.tsx   # Header with title, tagline, theme toggle
+│   │   ├── AboutCard.tsx    # Profile photo & bio
+│   │   ├── AppIcon.tsx      # App tile component
+│   │   ├── AppGrid.tsx      # Responsive app grid (3/4/6 cols)
+│   │   ├── FeatureTile.tsx  # Feature banner with confetti
+│   │   ├── SocialRow.tsx    # Social links row
+│   │   ├── NewsletterCTA.tsx # Newsletter CTA button
+│   │   └── Footer.tsx       # Footer
+│   ├── providers/
+│   │   └── ThemeProvider.tsx # Theme context provider
+│   ├── content.ts           # Single source of truth for all content
+│   ├── layout.tsx           # Root layout with metadata
+│   ├── page.tsx             # Main page assembling all components
+│   └── globals.css          # Global styles & theme variables
 ├── public/
 │   ├── icons/              # App & social icons (PNG)
-│   └── images/             # Profile & feature images
-└── package.json
+│   └── images/              # Profile & feature images
+├── package.json
+└── README.md
 ```
 
 ## ✏️ Adding New Apps
@@ -91,13 +111,57 @@ Copy `.env.example` to `.env.local` and configure:
 PLAUSIBLE_DOMAIN=your-domain.com
 ```
 
+## 🎯 Current Status
+
+✅ **Completed:**
+- Project scaffold (T1-T3)
+- All UI components (T4-T11)
+- Light/dark theme system
+- Responsive grid layout
+- Accessibility features
+- Placeholder icons & images
+
+⏳ **Remaining (T12):**
+- Replace placeholder images with real assets
+- Deploy to Vercel
+- Run Lighthouse audit
+- Performance optimization
+
+## 🧪 Development
+
+```bash
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Test production build
+npm start
+```
+
 ## ♿ Accessibility
 
-- WCAG 2.1 AA compliant
-- Keyboard navigation
-- Focus-visible states
-- Reduced motion support
-- Semantic HTML
+- **WCAG 2.1 AA compliant**
+- Full keyboard navigation with visible focus states
+- Respects `prefers-reduced-motion`
+- Semantic HTML throughout
+- All images have alt text
+- Color contrast ≥ 4.5:1 for body text
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+1. Push to GitHub
+2. Import project on [Vercel](https://vercel.com)
+3. Auto-deploy on push
+
+```bash
+# Or use CLI
+npm i -g vercel
+vercel
+```
 
 ## 📄 License
 
