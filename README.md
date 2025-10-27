@@ -123,11 +123,12 @@ PLAUSIBLE_DOMAIN=your-domain.com
 - Real profile photo and social icons
 - Updated links (affiliate links for personal items, bit.ly for socials)
 
-⏳ **Remaining (T12):**
-- Add feature image (`/public/images/feature.jpg`)
-- Deploy to Vercel
-- Run Lighthouse audit
-- Performance optimization
+✅ **Completed (T12):**
+- ✅ Theme system fixed (light/dark mode working)
+- ✅ Deployed to Vercel: https://snackoverflow-george-linktree-8odjnfpe0.vercel.app
+- ✅ Production build successful
+- ✅ Static generation enabled
+- ✅ All pages working: /, /about, /playground
 
 ## 🧪 Development
 

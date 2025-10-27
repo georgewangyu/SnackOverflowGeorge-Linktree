@@ -32,7 +32,7 @@ export const site = {
     {
       title: "My Camera",
       iconKey: "camera" as keyof typeof iconMap,
-      href: "https://amzn.to/4lOEqvg",
+      href: "https://amzn.to/4oFe1Sx",
       alt: "My Camera",
     },
     {
@@ -73,7 +73,7 @@ export const site = {
     {
       title: "My YouTube",
       iconKey: "youtube" as keyof typeof iconMap,
-      href: "https://bit.ly/georgewangyt",
+      href: "https://bit.ly/snackoverflowgeorgeyt",
     },
     {
       title: "My Discord",
