@@ -3,7 +3,7 @@
  * Just drop PNG files in /public/icons/ and JPG/PNG in /public/images/
  */
 
-type IconKey = 'youtube' | 'github' | 'tiktok' | 'blog' | 'x' | 'discord' | 'twitch' | 'instagram' | 'linkedin' | 'substack' | 'newsletter';
+type IconKey = 'youtube' | 'github' | 'tiktok' | 'blog' | 'x' | 'discord' | 'twitch' | 'instagram' | 'linkedin' | 'substack' | 'newsletter' | 'camera' | 'scooter' | 'mug' | 'microphone';
 type ImageKey = 'profile' | 'feature';
 
 /**

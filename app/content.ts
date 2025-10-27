@@ -9,6 +9,11 @@ const iconMap = {
   blog: "blog",
   x: "x",
   discord: "discord",
+  instagram: "instagram",
+  camera: "camera",
+  scooter: "scooter",
+  mug: "mug",
+  microphone: "microphone",
 } as const;
 
 export const site = {
@@ -22,45 +27,38 @@ export const site = {
     linkHref: "",
   },
   
-  // Main app grid - easy to add new apps here
-  // Just add title, iconKey (from iconMap), and href
-  apps: [
+  // Personal items - 2x2 grid (LEFT column)
+  personalItems: [
     {
-      title: "YouTube Channel",
-      iconKey: "youtube" as keyof typeof iconMap,
-      href: "https://youtube.com/@snackoverflowgeorge",
-      alt: "YouTube Channel",
-    },
-    {
-      title: "GitHub",
-      iconKey: "github" as keyof typeof iconMap,
-      href: "https://github.com/georgewangyu",
-      alt: "GitHub Profile",
-    },
-    {
-      title: "TikTok",
-      iconKey: "tiktok" as keyof typeof iconMap,
-      href: "https://tiktok.com/@snackoverflowgeorge",
-      alt: "TikTok Profile",
-    },
-    {
-      title: "Blog",
-      iconKey: "blog" as keyof typeof iconMap,
+      title: "My Camera",
+      iconKey: "camera" as keyof typeof iconMap,
       href: "#",
-      alt: "Blog",
+      alt: "My Camera",
     },
-  ].map(app => ({
-    ...app,
-    icon: getIconPath(app.title, iconMap[app.iconKey]),
+    {
+      title: "My Scooter",
+      iconKey: "scooter" as keyof typeof iconMap,
+      href: "#",
+      alt: "My Scooter",
+    },
+    {
+      title: "My Mug",
+      iconKey: "mug" as keyof typeof iconMap,
+      href: "#",
+      alt: "My Mug",
+    },
+    {
+      title: "My Microphone",
+      iconKey: "microphone" as keyof typeof iconMap,
+      href: "#",
+      alt: "My Microphone",
+    },
+  ].map(item => ({
+    ...item,
+    icon: getIconPath(item.title, iconMap[item.iconKey]),
   })),
   
-  feature: {
-    image: getImagePath("feature"),
-    caption: "",
-    confetti: false,
-  },
-  
-  // Social links for bottom row
+  // Social links - 2x2 grid (RIGHT column)
   socials: [
     {
       title: "TikTok",
@@ -68,8 +66,8 @@ export const site = {
       href: "https://tiktok.com/@snackoverflowgeorge",
     },
     {
-      title: "X",
-      iconKey: "x" as keyof typeof iconMap,
+      title: "Instagram",
+      iconKey: "instagram" as keyof typeof iconMap,
       href: "",
     },
     {
@@ -82,19 +80,15 @@ export const site = {
       iconKey: "discord" as keyof typeof iconMap,
       href: "",
     },
-    {
-      title: "GitHub",
-      iconKey: "github" as keyof typeof iconMap,
-      href: "https://github.com/georgewangyu",
-    },
   ].map(social => ({
     ...social,
     icon: getIconPath(social.title, iconMap[social.iconKey]),
   })),
   
-  newsletter: {
-    ctaText: "Join my list →",
-    href: "#",
+  feature: {
+    image: getImagePath("feature"),
+    caption: "How to Build Apps",
+    confetti: false,
   },
 } as const;
 
