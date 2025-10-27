@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "../content";
 
 export function FeatureTile() {
@@ -30,7 +31,10 @@ export function FeatureTile() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 relative">
+    <Link 
+      href="/playground"
+      className="flex flex-col items-center gap-2 relative hover:scale-[1.02] transition-transform duration-180 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark rounded-2xl"
+    >
       {/* Large image tile */}
       <div
         className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180 cursor-pointer focus-within:ring-2 focus-within:ring-primary-light dark:focus-within:ring-primary-dark"
@@ -86,7 +90,7 @@ export function FeatureTile() {
           }
         }
       `}</style>
-    </div>
+    </Link>
   );
 }
 

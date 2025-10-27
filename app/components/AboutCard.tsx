@@ -1,13 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "../content";
 
 export function AboutCard() {
   const { about } = site;
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <Link 
+      href="/about"
+      className="flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform duration-180 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark rounded-2xl"
+    >
       {/* Large image tile */}
       <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180">
         {about.photo ? (
@@ -43,7 +47,7 @@ export function AboutCard() {
       <span className="text-lg font-medium text-center text-foreground-light dark:text-foreground-dark">
         About Me
       </span>
-    </div>
+    </Link>
   );
 }
 
