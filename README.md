@@ -82,19 +82,22 @@ vercel
 
 ## ✏️ Adding New Apps
 
-Edit `app/content.ts` and add to the `apps` array:
+### Quick Add (2 steps):
 
-```ts
-apps: [
-  {
-    title: "Your App Name",
-    icon: "/icons/your-icon.png",
-    href: "https://your-link.com",
-    alt: "Accessible description",
-  },
-  // ... existing apps
-]
-```
+1. **Add icon:** Drop `your-app.png` in `/public/icons/`
+2. **Edit content:** Update `app/content.ts`:
+   - Add to `iconMap`: `yourApp: "your-app"`
+   - Add to `apps` array:
+   ```ts
+   {
+     title: "Your App Name",
+     iconKey: "yourApp" as keyof typeof iconMap,
+     href: "https://link.com",
+     alt: "Description",
+   }
+   ```
+
+See [ASSETS.md](./ASSETS.md) for complete guide on managing icons and images.
 
 ## 🎨 Theming
 
