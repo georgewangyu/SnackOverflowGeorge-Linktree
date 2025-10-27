@@ -3,7 +3,7 @@
  * Just drop PNG files in /public/icons/ and JPG/PNG in /public/images/
  */
 
-type IconKey = 'youtube' | 'github' | 'tiktok' | 'blog' | 'x' | 'discord' | 'twitch' | 'instagram' | 'linkedin' | 'substack' | 'newsletter' | 'camera' | 'scooter' | 'mug' | 'microphone';
+type IconKey = 'youtube' | 'github' | 'tiktok' | 'blog' | 'x' | 'discord' | 'instagram' | 'camera' | 'scooter' | 'mug' | 'microphone';
 type ImageKey = 'profile' | 'feature';
 
 /**
@@ -25,11 +25,11 @@ export function getIconPath(appName: string, iconKey?: string): string {
     'x': 'x',
     'twitter': 'x',
     'discord': 'discord',
-    'twitch': 'twitch',
     'instagram': 'instagram',
-    'linkedin': 'linkedin',
-    'substack': 'substack',
-    'newsletter': 'newsletter',
+    'camera': 'camera',
+    'scooter': 'scooter',
+    'mug': 'mug',
+    'microphone': 'microphone',
   };
 
   const key = appName.toLowerCase().replace(/\s+/g, '').replace('channel', '');

@@ -60,44 +60,41 @@ vercel
 ├── app/
 │   ├── components/          # UI components
 │   │   ├── HeroHeader.tsx   # Header with title, tagline, theme toggle
-│   │   ├── AboutCard.tsx    # Profile photo & bio
-│   │   ├── AppIcon.tsx      # App tile component
-│   │   ├── AppGrid.tsx      # Responsive app grid (3/4/6 cols)
-│   │   ├── FeatureTile.tsx  # Feature banner with confetti
-│   │   ├── SocialRow.tsx    # Social links row
-│   │   ├── NewsletterCTA.tsx # Newsletter CTA button
-│   │   └── Footer.tsx       # Footer
+│   │   ├── AboutCard.tsx    # Large square profile photo tile
+│   │   ├── AppIcon.tsx      # App/social tile component (rounded square images)
+│   │   ├── FeatureTile.tsx  # Large feature banner tile
+│   │   └── MainGrid.tsx     # 2-column layout orchestrator
 │   ├── providers/
 │   │   └── ThemeProvider.tsx # Theme context provider
+│   ├── utils/
+│   │   └── imageDiscovery.ts # Auto-discovery helpers for icons/images
 │   ├── content.ts           # Single source of truth for all content
 │   ├── layout.tsx           # Root layout with metadata
 │   ├── page.tsx             # Main page assembling all components
 │   └── globals.css          # Global styles & theme variables
 ├── public/
 │   ├── icons/              # App & social icons (PNG)
-│   └── images/              # Profile & feature images
+│   └── images/             # Profile & feature images (JPG/PNG)
 ├── package.json
 └── README.md
 ```
 
-## ✏️ Adding New Apps
+## ✏️ Adding New Apps or Images
 
-### Quick Add (2 steps):
+### Adding Icons (Easy!):
+1. **Drop your PNG file** in `/public/icons/` (e.g., `your-app.png`)
+2. **Update `app/content.ts`**:
+   - Add to `iconMap` at the top: `yourApp: "your-app"`
+   - Add the icon key type to `app/utils/imageDiscovery.ts` `IconKey` type
+   - Add your item to either `personalItems` or `socials` array with the new `iconKey`
 
-1. **Add icon:** Drop `your-app.png` in `/public/icons/`
-2. **Edit content:** Update `app/content.ts`:
-   - Add to `iconMap`: `yourApp: "your-app"`
-   - Add to `apps` array:
-   ```ts
-   {
-     title: "Your App Name",
-     iconKey: "yourApp" as keyof typeof iconMap,
-     href: "https://link.com",
-     alt: "Description",
-   }
-   ```
+### Adding Images:
+1. **Drop your JPG/PNG file** in `/public/images/`
+   - Profile photo: `profile.jpg` or `profile.png`
+   - Feature tile: `feature.jpg` or `feature.png`
+2. **Update if needed:** If using a different name, update the `ImageKey` type in `app/utils/imageDiscovery.ts`
 
-See [ASSETS.md](./ASSETS.md) for complete guide on managing icons and images.
+The system automatically discovers your assets - no manual path management!
 
 ## 🎨 Theming
 
@@ -120,12 +117,14 @@ PLAUSIBLE_DOMAIN=your-domain.com
 - Project scaffold (T1-T3)
 - All UI components (T4-T11)
 - Light/dark theme system
-- Responsive grid layout
+- Responsive 2-column layout (mobile stacked)
 - Accessibility features
-- Placeholder icons & images
+- Auto-discovery system for images/icons
+- Real profile photo and social icons
+- Updated links (affiliate links for personal items, bit.ly for socials)
 
 ⏳ **Remaining (T12):**
-- Replace placeholder images with real assets
+- Add feature image (`/public/images/feature.jpg`)
 - Deploy to Vercel
 - Run Lighthouse audit
 - Performance optimization

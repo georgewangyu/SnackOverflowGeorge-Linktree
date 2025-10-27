@@ -32,25 +32,25 @@ export const site = {
     {
       title: "My Camera",
       iconKey: "camera" as keyof typeof iconMap,
-      href: "#",
+      href: "https://amzn.to/4lOEqvg",
       alt: "My Camera",
     },
     {
       title: "My Scooter",
       iconKey: "scooter" as keyof typeof iconMap,
-      href: "#",
+      href: "https://amzn.to/47LbXD5",
       alt: "My Scooter",
     },
     {
       title: "My Mug",
       iconKey: "mug" as keyof typeof iconMap,
-      href: "#",
+      href: "https://amzn.to/3JOMChE",
       alt: "My Mug",
     },
     {
       title: "My Microphone",
       iconKey: "microphone" as keyof typeof iconMap,
-      href: "#",
+      href: "https://amzn.to/41kaeAT",
       alt: "My Microphone",
     },
   ].map(item => ({
@@ -63,22 +63,22 @@ export const site = {
     {
       title: "TikTok",
       iconKey: "tiktok" as keyof typeof iconMap,
-      href: "https://tiktok.com/@snackoverflowgeorge",
+      href: "https://bit.ly/snackoverflowgeorgetiktok",
     },
     {
       title: "Instagram",
       iconKey: "instagram" as keyof typeof iconMap,
-      href: "",
+      href: "https://bit.ly/snackoverflowgeorgeIG",
     },
     {
       title: "YouTube",
       iconKey: "youtube" as keyof typeof iconMap,
-      href: "https://youtube.com/@snackoverflowgeorge",
+      href: "https://bit.ly/georgewangyt",
     },
     {
       title: "Discord",
       iconKey: "discord" as keyof typeof iconMap,
-      href: "",
+      href: "https://bit.ly/discordsnackoverflowgeorge",
     },
   ].map(social => ({
     ...social,
