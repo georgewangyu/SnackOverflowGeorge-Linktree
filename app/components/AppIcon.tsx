@@ -8,26 +8,39 @@ interface AppIconProps {
   icon: string;
   href: string;
   alt: string;
+  size?: "sm" | "lg";
 }
 
-export function AppIcon({ title, icon, href, alt }: AppIconProps) {
+export function AppIcon({ title, icon, href, alt, size = "sm" }: AppIconProps) {
+  const sizeClasses = {
+    sm: "w-20 h-20 md:w-24 md:h-24",
+    lg: "w-64 h-64 md:w-80 md:h-80",
+  };
+
+  const captionSizeClasses = {
+    sm: "text-sm",
+    lg: "text-lg",
+  };
+
   return (
     <Link
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="group flex flex-col items-center gap-3 p-4 bg-white dark:bg-gray-800 rounded-2xl hover:scale-[1.04] transition-transform duration-180 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark"
+      className="group flex flex-col items-center gap-2 hover:scale-[1.04] transition-transform duration-180 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark rounded-2xl"
     >
-      <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+      {/* Image as the tile with rounded corners */}
+      <div className={`relative ${sizeClasses[size]} rounded-2xl overflow-hidden shadow-md`}>
         <Image
           src={icon}
           alt={alt}
           fill
-          className="object-contain"
-          sizes="(max-width: 768px) 64px, 80px"
+          className="object-cover"
+          sizes={size === "sm" ? "96px" : "320px"}
         />
       </div>
-      <span className="text-sm font-medium text-center text-foreground-light dark:text-foreground-dark group-hover:text-primary-light dark:group-hover:text-primary-dark transition-colors">
+      {/* Caption underneath */}
+      <span className={`${captionSizeClasses[size]} font-medium text-center text-foreground-light dark:text-foreground-dark`}>
         {title}
       </span>
     </Link>

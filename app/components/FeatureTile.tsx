@@ -30,39 +30,30 @@ export function FeatureTile() {
   }
 
   return (
-    <section className="w-full mb-16 relative">
-      <div className="container mx-auto px-4">
-        <div
-          className="relative w-full rounded-2xl overflow-hidden cursor-pointer focus-within:ring-2 focus-within:ring-primary-light dark:focus-within:ring-primary-dark"
-          onClick={handleClick}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleClick();
-            }
-          }}
-          role="button"
-          tabIndex={0}
-          aria-label={feature.caption || "Feature image"}
-        >
-          <div className="relative w-full aspect-video bg-gray-200 dark:bg-gray-700">
-            <Image
-              src={feature.image}
-              alt={feature.caption || "Feature"}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              priority={false}
-            />
-          </div>
-        </div>
+    <div className="flex flex-col items-center gap-2 relative">
+      {/* Large image tile */}
+      <div
+        className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180 cursor-pointer focus-within:ring-2 focus-within:ring-primary-light dark:focus-within:ring-primary-dark"
+        onClick={handleClick}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            handleClick();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label={feature.caption || "Feature image"}
+      >
+        <Image
+          src={feature.image}
+          alt={feature.caption || "Feature"}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 256px, 320px"
+          priority={false}
+        />
         
-        {feature.caption && (
-          <p className="text-center mt-4 text-lg font-medium text-foreground-light dark:text-foreground-dark">
-            {feature.caption}
-          </p>
-        )}
-
         {/* Simple confetti effect */}
         {showConfetti && (
           <div className="absolute inset-0 pointer-events-none">
@@ -80,6 +71,13 @@ export function FeatureTile() {
         )}
       </div>
       
+      {/* Caption */}
+      {feature.caption && (
+        <span className="text-lg font-medium text-center text-foreground-light dark:text-foreground-dark">
+          {feature.caption}
+        </span>
+      )}
+      
       <style jsx>{`
         @keyframes confetti {
           to {
@@ -88,7 +86,7 @@ export function FeatureTile() {
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 }
 
