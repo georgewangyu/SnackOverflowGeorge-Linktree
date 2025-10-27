@@ -13,13 +13,13 @@ interface AppIconProps {
 
 export function AppIcon({ title, icon, href, alt, size = "sm" }: AppIconProps) {
   const sizeClasses = {
-    sm: "w-20 h-20 md:w-24 md:h-24",
-    lg: "w-64 h-64 md:w-80 md:h-80",
+    sm: "w-16 h-16 md:w-24 md:h-24",
+    lg: "w-48 h-48 md:w-80 md:h-80",
   };
 
   const captionSizeClasses = {
-    sm: "text-sm",
-    lg: "text-lg",
+    sm: "text-xs md:text-sm",
+    lg: "text-base md:text-lg",
   };
 
   return (

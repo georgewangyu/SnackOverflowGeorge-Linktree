@@ -13,7 +13,7 @@ export function AboutCard() {
       className="flex flex-col items-center gap-2 hover:scale-[1.02] transition-transform duration-180 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark rounded-2xl"
     >
       {/* Large image tile */}
-      <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180">
+      <div className="relative w-48 h-48 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180">
         {about.photo ? (
           <Image
             src={about.photo}
@@ -44,7 +44,7 @@ export function AboutCard() {
         )}
       </div>
       {/* Caption */}
-      <span className="text-lg font-medium text-center text-foreground-light dark:text-foreground-dark">
+      <span className="text-base md:text-lg font-medium text-center text-foreground-light dark:text-foreground-dark">
         About Me
       </span>
     </Link>

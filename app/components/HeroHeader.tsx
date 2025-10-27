@@ -18,13 +18,13 @@ export function HeroHeader() {
 
   return (
     <header className="w-full">
-      <div className="container mx-auto px-4 pt-12 pb-8">
+      <div className="container mx-auto px-4 pt-8 pb-6 md:pt-12 md:pb-8">
         <div className="flex items-center justify-between">
           <div className="flex-1">
-            <h1 className="font-mono text-3xl md:text-4xl font-bold text-foreground-light dark:text-foreground-dark mb-2">
+            <h1 className="font-mono text-2xl md:text-4xl font-bold text-foreground-light dark:text-foreground-dark mb-1 md:mb-2">
               {site.title}
             </h1>
-            <p className="text-lg text-foreground-light dark:text-foreground-dark opacity-80">
+            <p className="text-sm md:text-lg text-foreground-light dark:text-foreground-dark opacity-80">
               {site.tagline}
             </p>
           </div>

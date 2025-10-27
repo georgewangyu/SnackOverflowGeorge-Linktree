@@ -37,7 +37,7 @@ export function FeatureTile() {
     >
       {/* Large image tile */}
       <div
-        className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180 cursor-pointer focus-within:ring-2 focus-within:ring-primary-light dark:focus-within:ring-primary-dark"
+        className="relative w-48 h-48 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-md hover:scale-[1.04] transition-transform duration-180 cursor-pointer focus-within:ring-2 focus-within:ring-primary-light dark:focus-within:ring-primary-dark"
         onClick={handleClick}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -77,7 +77,7 @@ export function FeatureTile() {
       
       {/* Caption */}
       {feature.caption && (
-        <span className="text-lg font-medium text-center text-foreground-light dark:text-foreground-dark">
+        <span className="text-base md:text-lg font-medium text-center text-foreground-light dark:text-foreground-dark">
           {feature.caption}
         </span>
       )}
