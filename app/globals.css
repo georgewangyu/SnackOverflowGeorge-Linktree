@@ -47,17 +47,15 @@ body {
 }
 
 /* Theme variables */
-[data-theme="light"],
-:root[data-theme="light"] {
-  --background: #E6E1DC;
-  --foreground: #111111;
-  --primary: #7CB3FF;
+:root {
+  --background-light: #E6E1DC;
+  --foreground-light: #111111;
+  --primary-light: #7CB3FF;
 }
 
-[data-theme="dark"],
-:root[data-theme="dark"] {
-  --background: #0C0C14;
-  --foreground: #FAFAFA;
-  --primary: #4A8BFF;
+.dark {
+  --background-dark: #0C0C14;
+  --foreground-dark: #FAFAFA;
+  --primary-dark: #4A8BFF;
 }
 
