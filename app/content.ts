@@ -61,22 +61,22 @@ export const site = {
   // Social links - 2x2 grid (RIGHT column)
   socials: [
     {
-      title: "TikTok",
+      title: "My TikTok",
       iconKey: "tiktok" as keyof typeof iconMap,
       href: "https://bit.ly/snackoverflowgeorgetiktok",
     },
     {
-      title: "Instagram",
+      title: "My Instagram",
       iconKey: "instagram" as keyof typeof iconMap,
       href: "https://bit.ly/snackoverflowgeorgeIG",
     },
     {
-      title: "YouTube",
+      title: "My YouTube",
       iconKey: "youtube" as keyof typeof iconMap,
       href: "https://bit.ly/georgewangyt",
     },
     {
-      title: "Discord",
+      title: "My Discord",
       iconKey: "discord" as keyof typeof iconMap,
       href: "https://bit.ly/discordsnackoverflowgeorge",
     },
@@ -86,8 +86,8 @@ export const site = {
   })),
   
   feature: {
-    image: getImagePath("feature"),
-    caption: "How to Build Apps",
+    image: getImagePath("feature", "png"),
+    caption: "My Playground",
     confetti: false,
   },
 } as const;

@@ -15,7 +15,7 @@ export function AboutCard() {
             src={about.photo}
             alt="About Me"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="(max-width: 768px) 256px, 320px"
             priority
           />
