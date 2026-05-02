@@ -5,11 +5,13 @@ import { getIconPath, getImagePath } from "./utils/imageDiscovery";
 const iconMap = {
   youtube: "youtube",
   github: "github",
+  linkedin: "linkedin",
   tiktok: "tiktok",
   blog: "blog",
   x: "x",
   discord: "discord",
   instagram: "instagram",
+  snackvoice: "snackvoice",
   camera: "camera",
   scooter: "scooter",
   mug: "mug",
@@ -80,6 +82,26 @@ export const site = {
       iconKey: "discord" as keyof typeof iconMap,
       href: "https://bit.ly/discordsnackoverflowgeorge",
     },
+    {
+      title: "My X",
+      iconKey: "x" as keyof typeof iconMap,
+      href: "https://x.com/georgewangyu",
+    },
+    {
+      title: "My LinkedIn",
+      iconKey: "linkedin" as keyof typeof iconMap,
+      href: "https://www.linkedin.com/in/georgewangyu/",
+    },
+    {
+      title: "My GitHub",
+      iconKey: "github" as keyof typeof iconMap,
+      href: "https://github.com/georgewangyu",
+    },
+    {
+      title: "SnackVoice",
+      iconKey: "snackvoice" as keyof typeof iconMap,
+      href: "https://snack-voice.vercel.app",
+    },
   ].map(social => ({
     ...social,
     icon: getIconPath(social.title, iconMap[social.iconKey]),
@@ -91,4 +113,3 @@ export const site = {
     confetti: false,
   },
 } as const;
-

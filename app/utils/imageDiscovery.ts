@@ -3,7 +3,7 @@
  * Just drop PNG files in /public/icons/ and JPG/PNG in /public/images/
  */
 
-type IconKey = 'youtube' | 'github' | 'tiktok' | 'blog' | 'x' | 'discord' | 'instagram' | 'camera' | 'scooter' | 'mug' | 'microphone';
+type IconKey = 'youtube' | 'github' | 'linkedin' | 'tiktok' | 'blog' | 'x' | 'discord' | 'instagram' | 'snackvoice' | 'camera' | 'scooter' | 'mug' | 'microphone';
 type ImageKey = 'profile' | 'feature';
 
 /**
@@ -20,12 +20,14 @@ export function getIconPath(appName: string, iconKey?: string): string {
   const iconMap: Record<string, IconKey> = {
     'youtube': 'youtube',
     'github': 'github',
+    'linkedin': 'linkedin',
     'tiktok': 'tiktok',
     'blog': 'blog',
     'x': 'x',
     'twitter': 'x',
     'discord': 'discord',
     'instagram': 'instagram',
+    'snackvoice': 'snackvoice',
     'camera': 'camera',
     'scooter': 'scooter',
     'mug': 'mug',
@@ -44,4 +46,3 @@ export function getIconPath(appName: string, iconKey?: string): string {
 export function getImagePath(key: ImageKey, extension: 'jpg' | 'png' = 'jpg'): string {
   return `/images/${key}.${extension}`;
 }
-
