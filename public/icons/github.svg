@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="GitHub">
+  <rect width="1024" height="1024" rx="188" fill="#181717"/>
+  <circle cx="512" cy="512" r="328" fill="#fff"/>
+  <text x="512" y="585" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="248" font-weight="800" letter-spacing="-12" fill="#181717">GH</text>
+</svg>

@@ -4,11 +4,11 @@ import { getIconPath, getImagePath } from "./utils/imageDiscovery";
 // Just add: `key: "filename"` -> will auto-load /icons/filename.png
 const iconMap = {
   youtube: "youtube",
-  github: "github",
+  github: "github.svg",
   linkedin: "linkedin",
   tiktok: "tiktok",
   blog: "blog",
-  x: "x",
+  x: "x.svg",
   discord: "discord",
   instagram: "instagram",
   snackvoice: "snackvoice",
@@ -21,6 +21,21 @@ const iconMap = {
 export const site = {
   title: "SnackOverflowGeorge",
   tagline: "My corner of the internet",
+
+  temporaryBioLinks: [
+    {
+      label: "Vibranium demo",
+      detail: "Free pizza",
+      href: "https://calendly.com/d/dz37-wkq-sks/vibranium-demo-free-pizza",
+      expiresAt: "2026-06-16T07:00:00.000Z",
+    },
+    {
+      label: "B12",
+      detail: "AI website builder",
+      href: "https://b12.1stcollab.com/snackoverflowgeorge_ig",
+      expiresAt: "2026-07-10T07:00:00.000Z",
+    },
+  ],
   
   about: {
     photo: getImagePath("profile"),

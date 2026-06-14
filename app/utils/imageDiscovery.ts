@@ -13,7 +13,8 @@ type ImageKey = 'profile' | 'feature';
  */
 export function getIconPath(appName: string, iconKey?: string): string {
   if (iconKey) {
-    return `/icons/${iconKey}.png`;
+    const filename = /\.[a-z0-9]+$/i.test(iconKey) ? iconKey : `${iconKey}.png`;
+    return `/icons/${filename}`;
   }
 
   // Auto-map common app names to icon files
