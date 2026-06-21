@@ -24,6 +24,11 @@ export const site = {
 
   temporaryBioLinks: [
     {
+      label: "Send a request",
+      detail: "Video or feature idea",
+      href: "https://audience-request-form.vercel.app",
+    },
+    {
       label: "Vibranium demo",
       detail: "Free pizza",
       href: "https://calendly.com/d/dz37-wkq-sks/vibranium-demo-free-pizza",
