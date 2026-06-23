@@ -29,6 +29,11 @@ export const site = {
       href: "https://audience-request-form.vercel.app",
     },
     {
+      label: "Agent loops",
+      detail: "YouTube companion",
+      href: "/loops",
+    },
+    {
       label: "Vibranium demo",
       detail: "Free pizza",
       href: "https://calendly.com/d/dz37-wkq-sks/vibranium-demo-free-pizza",
