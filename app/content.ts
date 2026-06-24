@@ -26,7 +26,7 @@ export const site = {
     {
       label: "Send a request",
       detail: "Video or feature idea",
-      href: "https://audience-request-form.vercel.app",
+      href: "https://requests.snackoverflowgeorge.com",
     },
     {
       label: "Agent loops",
@@ -125,7 +125,7 @@ export const site = {
     {
       title: "SnackVoice",
       iconKey: "snackvoice" as keyof typeof iconMap,
-      href: "https://snack-voice.vercel.app",
+      href: "https://snackvoice.snackoverflowgeorge.com",
     },
   ].map(social => ({
     ...social,

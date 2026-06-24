@@ -18,11 +18,16 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://linktree.snackoverflowgeorge.com"),
   title: "SnackOverflowGeorge",
   description: "My corner of the internet",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "SnackOverflowGeorge",
     description: "My corner of the internet",
+    url: "https://linktree.snackoverflowgeorge.com",
     type: "website",
     // OG image will be added later
   },
@@ -45,4 +50,3 @@ export default function RootLayout({
     </html>
   );
 }
-
