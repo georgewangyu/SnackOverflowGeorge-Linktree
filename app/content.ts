@@ -7,6 +7,7 @@ const iconMap = {
   github: "github.svg",
   linkedin: "linkedin",
   tiktok: "tiktok",
+  email: "email.svg",
   blog: "blog",
   x: "x.svg",
   discord: "discord",
@@ -121,6 +122,11 @@ export const site = {
       title: "My GitHub",
       iconKey: "github" as keyof typeof iconMap,
       href: "https://github.com/georgewangyu",
+    },
+    {
+      title: "Email me",
+      iconKey: "email" as keyof typeof iconMap,
+      href: "mailto:hellogeorgehq@gmail.com",
     },
     {
       title: "SnackVoice",

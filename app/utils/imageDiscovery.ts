@@ -3,7 +3,7 @@
  * Just drop PNG files in /public/icons/ and JPG/PNG in /public/images/
  */
 
-type IconKey = 'youtube' | 'github' | 'linkedin' | 'tiktok' | 'blog' | 'x' | 'discord' | 'instagram' | 'snackvoice' | 'camera' | 'scooter' | 'mug' | 'microphone';
+type IconKey = 'youtube' | 'github' | 'linkedin' | 'tiktok' | 'email' | 'blog' | 'x' | 'discord' | 'instagram' | 'snackvoice' | 'camera' | 'scooter' | 'mug' | 'microphone';
 type ImageKey = 'profile' | 'feature';
 
 /**
@@ -23,6 +23,8 @@ export function getIconPath(appName: string, iconKey?: string): string {
     'github': 'github',
     'linkedin': 'linkedin',
     'tiktok': 'tiktok',
+    'email': 'email',
+    'mail': 'email',
     'blog': 'blog',
     'x': 'x',
     'twitter': 'x',
