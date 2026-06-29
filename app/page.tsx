@@ -1,11 +1,9 @@
-import { HeroHeader } from "./components/HeroHeader";
-import { MainGrid } from "./components/MainGrid";
+import { CompactEditorialHome } from "./components/CompactEditorialHome";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark transition-colors">
-      <HeroHeader />
-      <MainGrid />
+    <main className="min-h-screen bg-[#f8f7f2] text-[#141414]">
+      <CompactEditorialHome />
     </main>
   );
 }

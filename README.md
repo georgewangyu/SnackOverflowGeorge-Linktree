@@ -125,7 +125,7 @@ PLAUSIBLE_DOMAIN=your-domain.com
 
 ✅ **Completed (T12):**
 - ✅ Theme system fixed (light/dark mode working)
-- ✅ Deployed to Vercel: https://snackoverflow-george-linktree-8odjnfpe0.vercel.app
+- ✅ Deployed to Vercel: https://linktree.snackoverflowgeorge.com
 - ✅ Production build successful
 - ✅ Static generation enabled
 - ✅ All pages working: /, /about, /playground
@@ -169,4 +169,3 @@ vercel
 ## 📄 License
 
 Private project
-
