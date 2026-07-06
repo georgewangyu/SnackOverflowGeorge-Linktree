@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandMark } from "./BrandMark";
 import { SmartLink } from "../beta/components";
 import { kitLinks, primaryActions, socialLinks } from "../beta/data";
 import { site } from "../content";
@@ -41,9 +42,12 @@ export function EditorialHome() {
             />
           </div>
           <div className="min-w-0 p-5 sm:p-8">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#d44937] sm:text-sm sm:tracking-[0.18em]">
-              SnackOverflowGeorge
-            </p>
+            <div className="flex items-center gap-2">
+              <BrandMark className="h-9 w-9 shrink-0" />
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#d44937] sm:text-sm sm:tracking-[0.18em]">
+                SnackOverflowGeorge
+              </p>
+            </div>
             <h1 className="mt-4 max-w-full text-[2rem] font-black leading-[1.02] tracking-normal sm:text-5xl sm:leading-[0.94]">
               A cleaner front door for everything George is building.
             </h1>

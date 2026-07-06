@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BrandMark } from "./BrandMark";
 import { SmartLink } from "../beta/components";
 import { kitLinks, primaryActions, socialLinks } from "../beta/data";
 import { site } from "../content";
@@ -53,9 +54,12 @@ export function CompactEditorialHome() {
             <Image src={site.about.photo} alt="George Wang" fill className="object-cover" priority sizes="64px" />
           </div>
           <div className="min-w-0">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#d44937]">
-              SnackOverflowGeorge
-            </p>
+            <div className="flex items-center gap-2">
+              <BrandMark className="h-8 w-8 shrink-0" />
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#d44937]">
+                SnackOverflowGeorge
+              </p>
+            </div>
             <h1 className="mt-1 text-2xl font-black leading-tight text-[#141414]">
               George Wang
             </h1>
