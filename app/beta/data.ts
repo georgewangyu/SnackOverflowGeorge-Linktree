@@ -6,15 +6,50 @@ export const primaryActions = [
     detail: "Ask for a video, feature, teardown, or build",
     href: "https://requests.snackoverflowgeorge.com",
   },
+] as const;
+
+export const radarLinks = [
   {
-    label: "Agent loops",
-    detail: "Reusable AI-agent loop catalog",
-    href: "https://loopsradar.snackoverflowgeorge.com",
+    title: "Builder Radar",
+    detail: "Builders, repos, launches, and AI workflow signals",
+    href: "https://georgebuilderradar.snackoverflowgeorge.com",
+    icon: "/icons/builder-radar.svg",
   },
   {
-    label: "SnackVoice",
-    detail: "AI captions and voice workflow product",
-    href: "https://snackvoice.snackoverflowgeorge.com",
+    title: "Loops Radar",
+    detail: "Reusable AI-agent loops and workflow patterns",
+    href: "https://loopsradar.snackoverflowgeorge.com",
+    icon: "/icons/loops-radar.svg",
+  },
+  {
+    title: "Books Radar",
+    detail: "Book recommendations and reading notes that compound",
+    href: "https://booksradar.snackoverflowgeorge.com",
+    icon: "/icons/books-radar.svg",
+  },
+  {
+    title: "Hooks Radar",
+    detail: "Short-form video hook formulas and examples",
+    href: "https://hooksradar.snackoverflowgeorge.com",
+    icon: "/icons/hooks-radar.svg",
+  },
+  {
+    title: "AI Radar",
+    detail: "AI papers and crash-course reading paths",
+    href: "https://airadar.snackoverflowgeorge.com",
+    icon: "/icons/ai-radar.svg",
+  },
+  {
+    title: "AI Leaderboard Radar",
+    detail: "Lean AI-native companies with high revenue per employee",
+    href: "https://aileaderboardradar.snackoverflowgeorge.com",
+    icon: "/icons/ai-leaderboard-radar.svg",
+  },
+  {
+    title: "Sports Radar",
+    detail: "Sports internet moments worth sending to the group chat",
+    href: "https://sportsradar.snackoverflowgeorge.com",
+    icon: "/icons/sports-radar.svg",
   },
 ] as const;
 
@@ -57,4 +92,4 @@ export const proofCards = [
   },
 ] as const;
 
-export const allReviewLinks = [...primaryActions, ...socialLinks, ...kitLinks] as const;
+export const allReviewLinks = [...primaryActions, ...radarLinks, ...socialLinks, ...kitLinks] as const;

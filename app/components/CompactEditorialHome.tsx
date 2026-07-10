@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { BrandMark } from "./BrandMark";
 import { SmartLink } from "../beta/components";
-import { kitLinks, primaryActions, socialLinks } from "../beta/data";
+import { kitLinks, primaryActions, radarLinks, socialLinks } from "../beta/data";
 import { site } from "../content";
 
 const emailIcon = socialLinks.find((link) => link.title === "Email me")?.icon;
@@ -10,22 +10,36 @@ const snackVoiceIcon = site.socials.find((link) => link.title === "SnackVoice")?
 const actionLinks = primaryActions.map((action) => ({
   ...action,
   title: action.label,
-  icon:
-    action.label === "SnackVoice"
-      ? snackVoiceIcon
-      : action.label === "Agent loops"
-        ? site.feature.image
-        : emailIcon,
+  icon: emailIcon,
 }));
+
+const buildLinks = [
+  ...socialLinks.filter((link) => ["My GitHub", "My LinkedIn", "My X"].includes(link.title)),
+  {
+    title: "SnackVoice",
+    detail: "AI captions and voice workflow product",
+    href: "https://snackvoice.snackoverflowgeorge.com",
+    icon: snackVoiceIcon,
+  },
+] as const;
+
+function getLinkFallback(title: string) {
+  const words = title.replace(/^My\s+/, "").replace(/\s+Radar$/, "").split(/\s+/);
+
+  if (words.length === 1) {
+    return words[0].slice(0, 2).toUpperCase();
+  }
+
+  return words
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 3)
+    .toUpperCase();
+}
 
 const sections = [
   {
-    label: "Start",
-    title: "Requests, demos, and companion pages",
-    links: actionLinks,
-  },
-  {
-    label: "Watch",
+    label: "Channels",
     title: "Short-form and long-form channels",
     links: socialLinks.filter((link) =>
       ["My TikTok", "My Instagram", "My YouTube"].includes(link.title),
@@ -34,14 +48,22 @@ const sections = [
   {
     label: "Build",
     title: "Products, code, and public work",
-    links: socialLinks.filter((link) =>
-      ["My GitHub", "My LinkedIn", "My X"].includes(link.title),
-    ),
+    links: buildLinks,
+  },
+  {
+    label: "Radars",
+    title: "Public feeds and catalogs",
+    links: radarLinks,
   },
   {
     label: "Use",
     title: "Gear and creator setup",
     links: kitLinks,
+  },
+  {
+    label: "Request",
+    title: "Send a request",
+    links: actionLinks,
   },
 ] as const;
 
@@ -77,7 +99,7 @@ export function CompactEditorialHome() {
               Intro
             </p>
             <h2 className="mt-2 text-[1.35rem] font-black leading-tight sm:text-2xl">
-              Software engineer and creator building public experiments around AI workflows.
+              Agentic software engineer and creator building public experiments around AI workflows.
             </h2>
           </div>
         </div>
@@ -108,7 +130,7 @@ export function CompactEditorialHome() {
                     <Image src={link.icon} alt="" fill className="object-cover" sizes="44px" />
                   ) : (
                     <span className="flex h-full w-full items-center justify-center text-xs font-black text-black/48">
-                      SO
+                      {getLinkFallback(link.title)}
                     </span>
                   )}
                 </span>
