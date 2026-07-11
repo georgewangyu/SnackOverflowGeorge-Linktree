@@ -52,7 +52,7 @@ export const site = {
   about: {
     photo: getImagePath("profile"),
     blurb:
-      "FAANG software engineer with 5+ years building production software and AI products. I teach practical AI automation with Claude Code and Codex.",
+      "FAANG software engineer with 10+ years building production software and AI products. I teach practical AI automation with Claude Code and Codex.",
     linkText: "",
     linkHref: "",
   },

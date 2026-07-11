@@ -8,16 +8,30 @@ the only action that opts the contact into the `Practical AI Workflows` topic;
 unchecked guide requests remain globally unsubscribed from broadcasts.
 
 After Resend accepts the contact, the server returns a five-minute GET-only URL
-for the free PDF in Vercel Private Blob and sends the same PDF as an attachment
-from the verified guide sender. Email delivery is best effort so a temporary
-mail failure does not block the immediate download. The free guide is not
-served from `public/`.
+for the free PDF in Vercel Private Blob. The guide is downloaded directly from
+that private link; submitting the form does not send a transactional email.
+The free guide is not served from `public/`.
 
 Resend configuration is managed through the official CLI. The deployed app
-requires `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `RESEND_FREE_GUIDE_SEGMENT_ID`,
-`RESEND_AI_WORKFLOWS_TOPIC_ID`, and `FREE_GUIDE_BLOB_PATHNAME`. A verified
+requires `RESEND_API_KEY`, `RESEND_FREE_GUIDE_SEGMENT_ID`,
+`RESEND_AI_WORKFLOWS_TOPIC_ID`, and `FREE_GUIDE_BLOB_PATHNAME`. Resend is the
+canonical mailing list and handles topic consent and unsubscribes. A verified
 sending domain is not required for contact capture, but it is required before
-emailing the guide or sending broadcasts.
+sending broadcasts.
+
+### Export the mailing list
+
+The contact list is portable. The export script follows Resend's pagination
+and writes every contact to standard output:
+
+```bash
+npm run --silent export:contacts > ~/Downloads/resend-contacts.csv
+npm run --silent export:contacts -- --format=json > ~/Downloads/resend-contacts.json
+```
+
+The script reads `RESEND_API_KEY` from the shared private token file, the shell,
+or `.env.local`. Keep exports outside the repository because they contain
+personal data.
 
 ## Paid playbook delivery
 
@@ -159,8 +173,6 @@ Keep these values server-only; do not prefix them with `NEXT_PUBLIC_`:
 - `BLOB_READ_WRITE_TOKEN`
 - `PLAYBOOK_BLOB_PATHNAME`
 - `RESEND_API_KEY`
-- `RESEND_FROM_EMAIL`
-- `RESEND_REPLY_TO_EMAIL`
 - `RESEND_FREE_GUIDE_SEGMENT_ID`
 - `RESEND_AI_WORKFLOWS_TOPIC_ID`
 - `FREE_GUIDE_BLOB_PATHNAME`

@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 import {
   createFreeGuideDownloadUrl,
   saveFreeGuideLead,
-  sendFreeGuideEmail,
 } from "../../../lib/free-guide";
 
 export const dynamic = "force-dynamic";
@@ -59,16 +58,7 @@ export async function POST(request: NextRequest) {
   try {
     await saveFreeGuideLead({ email, marketingOptIn });
     const downloadUrl = await createFreeGuideDownloadUrl();
-    let emailSent = true;
-
-    try {
-      await sendFreeGuideEmail({ email, marketingOptIn }, downloadUrl);
-    } catch (error) {
-      emailSent = false;
-      console.error("Free-guide email delivery failed", error);
-    }
-
-    return response({ ok: true, downloadUrl, emailSent });
+    return response({ ok: true, downloadUrl });
   } catch (error) {
     console.error("Free-guide signup failed", error);
     return response(

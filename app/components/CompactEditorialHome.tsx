@@ -14,6 +14,8 @@ import { site } from "../content";
 
 const emailIcon = socialLinks.find((link) => link.title === "Email me")?.icon;
 const snackVoiceIcon = site.socials.find((link) => link.title === "SnackVoice")?.icon;
+const githubProfileHref =
+  site.socials.find((link) => link.title === "My GitHub")?.href ?? "https://github.com";
 
 const actionLinks = primaryActions.map((action) => ({
   ...action,
@@ -21,14 +23,20 @@ const actionLinks = primaryActions.map((action) => ({
   icon: emailIcon,
 }));
 
-const buildLinks = [
-  ...socialLinks.filter((link) => ["My GitHub", "My LinkedIn", "My X"].includes(link.title)),
+const workLinks = [
   {
     title: "SnackVoice",
     detail: "AI captions and voice workflow product",
     href: "https://snackvoice.snackoverflowgeorge.com",
     icon: snackVoiceIcon,
   },
+  {
+    title: "GitHub README",
+    detail: "Code, repositories, and public build notes",
+    href: `${githubProfileHref}#readme`,
+    icon: "/icons/github.svg",
+  },
+  ...radarLinks,
 ] as const;
 
 const featuredSocialLinks = socialLinks.filter((link) =>
@@ -53,14 +61,9 @@ function getLinkFallback(title: string) {
 
 const sections = [
   {
-    label: "Build",
+    label: "Work",
     title: "Products, code, and public work",
-    links: buildLinks,
-  },
-  {
-    label: "Radars",
-    title: "Public feeds and catalogs",
-    links: radarLinks,
+    links: workLinks,
   },
   {
     label: "Use",
@@ -84,7 +87,7 @@ export function CompactEditorialHome() {
               src={site.about.photo}
               alt="George Wang"
               fill
-              className="origin-top scale-[2.6] object-cover object-[50%_13%]"
+              className="origin-[50%_25%] scale-150 object-cover object-top"
               priority
               sizes="256px"
             />

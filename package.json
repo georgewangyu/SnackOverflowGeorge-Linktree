@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export:contacts": "set -a; [ ! -f ../georgerepo/.tokens/resend.env ] || . ../georgerepo/.tokens/resend.env; set +a; node --env-file-if-exists=.env.local scripts/export-resend-contacts.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

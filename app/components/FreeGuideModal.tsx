@@ -13,7 +13,6 @@ type FreeGuideModalProps = {
 type SignupResponse = {
   ok?: boolean;
   downloadUrl?: string;
-  emailSent?: boolean;
   error?: string;
 };
 
@@ -35,7 +34,6 @@ export function FreeGuideModal({
   );
   const [error, setError] = useState("");
   const [downloadUrl, setDownloadUrl] = useState("");
-  const [emailSent, setEmailSent] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -77,7 +75,6 @@ export function FreeGuideModal({
       }
 
       setDownloadUrl(payload.downloadUrl);
-      setEmailSent(payload.emailSent === true);
       setStatus("success");
     } catch (submissionError) {
       setError(
@@ -144,9 +141,8 @@ export function FreeGuideModal({
             {status === "success" ? (
               <div className="mt-6">
                 <p className="leading-7 text-black/65">
-                  {emailSent
-                    ? `I sent a copy to ${email}. You can also download it now.`
-                    : "Download the PDF now. This private link lasts five minutes, so save a local copy."}
+                  Download the PDF now. This private link lasts five minutes, so save a local
+                  copy.
                 </p>
                 <a
                   href={downloadUrl}
@@ -223,9 +219,6 @@ export function FreeGuideModal({
                 >
                   {status === "submitting" ? "Preparing your guide…" : "Get the free guide"}
                 </button>
-                <p className="mt-3 text-center text-xs leading-5 text-black/42">
-                  The guide only requires your email. The updates checkbox is optional.
-                </p>
               </form>
             )}
           </section>
