@@ -39,9 +39,9 @@ export const resourceOffers = [
     eyebrow: "$9.99 playbook",
     title: "The Seven-Day AI Workflow Pilot Playbook",
     detail: "A 40-page system for scoping, building, testing, and deciding what to do with your first AI workflow.",
-    meta: "$9.99 · One-time purchase",
+    meta: "$9.99",
     href: "https://buy.stripe.com/dRm6oHbTgd2g2qZ1Vh53O01",
-    cta: "Get the playbook →",
+    cta: "Buy now →",
   },
 ] as const;
 
