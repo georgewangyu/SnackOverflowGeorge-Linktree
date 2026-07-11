@@ -8,6 +8,43 @@ export const primaryActions = [
   },
 ] as const;
 
+export const consultationOffers = [
+  {
+    eyebrow: "For businesses",
+    title: "1:1 AI Workflow Consultation",
+    detail: "Turn one business workflow into a practical AI automation plan.",
+    meta: "$149 · 30 minutes",
+    href: "https://cal.com/george-iaqqbo/ai-business-workflow-consultation",
+  },
+  {
+    eyebrow: "For students & early-career engineers",
+    title: "CS Career, Resume & Project Review",
+    detail: "Get direct feedback on your resume, projects, interviews, or path into tech.",
+    meta: "$149 · 30 minutes",
+    href: "https://cal.com/george-iaqqbo/cs-career-resume-project-review",
+  },
+] as const;
+
+export const resourceOffers = [
+  {
+    kind: "lead-magnet",
+    eyebrow: "Free guide",
+    title: "How AI Actually Works",
+    detail: "A practical guide to context, prompts, tools, memory, review, and useful business workflows.",
+    meta: "Free PDF",
+    cta: "Get the guide →",
+  },
+  {
+    kind: "link",
+    eyebrow: "$9.99 playbook",
+    title: "The Seven-Day AI Workflow Pilot Playbook",
+    detail: "A 40-page system for scoping, building, testing, and deciding what to do with your first AI workflow.",
+    meta: "$9.99 · One-time purchase",
+    href: "https://buy.stripe.com/dRm6oHbTgd2g2qZ1Vh53O01",
+    cta: "Get the playbook →",
+  },
+] as const;
+
 export const radarLinks = [
   {
     title: "Builder Radar",

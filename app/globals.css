@@ -27,6 +27,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes linktree-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.linktree-enter {
+  animation: linktree-enter 420ms ease-out both;
+}
+
+.linktree-enter-delay {
+  animation-delay: 80ms;
+}
+
 /* Focus visible for accessibility */
 *:focus-visible {
   outline: 2px solid currentColor;
@@ -58,4 +77,3 @@ body {
   --foreground-dark: #FAFAFA;
   --primary-dark: #4A8BFF;
 }
-

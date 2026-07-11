@@ -1,7 +1,15 @@
 import Image from "next/image";
 import { BrandMark } from "./BrandMark";
+import { FreeGuideModal } from "./FreeGuideModal";
 import { SmartLink } from "../beta/components";
-import { kitLinks, primaryActions, radarLinks, socialLinks } from "../beta/data";
+import {
+  consultationOffers,
+  kitLinks,
+  primaryActions,
+  radarLinks,
+  resourceOffers,
+  socialLinks,
+} from "../beta/data";
 import { site } from "../content";
 
 const emailIcon = socialLinks.find((link) => link.title === "Email me")?.icon;
@@ -23,6 +31,12 @@ const buildLinks = [
   },
 ] as const;
 
+const featuredSocialLinks = socialLinks.filter((link) =>
+  ["My Instagram", "My TikTok", "My YouTube", "My LinkedIn", "My GitHub", "My X"].includes(
+    link.title,
+  ),
+);
+
 function getLinkFallback(title: string) {
   const words = title.replace(/^My\s+/, "").replace(/\s+Radar$/, "").split(/\s+/);
 
@@ -38,13 +52,6 @@ function getLinkFallback(title: string) {
 }
 
 const sections = [
-  {
-    label: "Channels",
-    title: "Short-form and long-form channels",
-    links: socialLinks.filter((link) =>
-      ["My TikTok", "My Instagram", "My YouTube", "My Substack"].includes(link.title),
-    ),
-  },
   {
     label: "Build",
     title: "Products, code, and public work",
@@ -70,40 +77,130 @@ const sections = [
 export function CompactEditorialHome() {
   return (
     <section className="mx-auto grid w-full max-w-3xl gap-5 overflow-x-clip px-3 py-5 sm:px-4 sm:py-8">
-      <header className="rounded-[1.5rem] border border-black/10 bg-white p-5 shadow-sm">
-        <div className="flex items-center gap-4">
-          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-black/10">
-            <Image src={site.about.photo} alt="George Wang" fill className="object-cover" priority sizes="64px" />
+      <header className="linktree-enter rounded-[1.5rem] border border-black/10 bg-white p-5 shadow-sm sm:p-6">
+        <div className="flex items-start gap-4 sm:gap-5">
+          <div className="relative h-[4.5rem] w-[4.5rem] shrink-0 overflow-hidden rounded-full border border-black/10 bg-black sm:h-20 sm:w-20">
+            <Image
+              src={site.about.photo}
+              alt="George Wang"
+              fill
+              className="origin-top scale-[2.6] object-cover object-[50%_13%]"
+              priority
+              sizes="256px"
+            />
           </div>
-          <div className="min-w-0">
-            <div className="flex items-center gap-2">
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-1.5">
               <BrandMark className="h-8 w-8 shrink-0" />
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#d44937]">
                 SnackOverflowGeorge
               </p>
             </div>
-            <h1 className="mt-1 text-2xl font-black leading-tight text-[#141414]">
+            <h1 className="mt-0.5 text-2xl font-black leading-tight text-[#141414] sm:text-[1.7rem]">
               George Wang
             </h1>
-            <p className="mt-1 text-sm leading-5 text-black/58">
-              Software, AI workflows, creator experiments, and useful links.
-            </p>
           </div>
         </div>
+
+        <p className="mt-4 max-w-2xl text-[0.95rem] font-medium leading-6 text-black/65 sm:text-base">
+          {site.about.blurb}
+        </p>
+
+        <nav className="mt-4 flex flex-wrap items-center gap-2" aria-label="George's social channels">
+          {featuredSocialLinks.map((link) => (
+            <SmartLink
+              key={link.href}
+              href={link.href}
+              ariaLabel={link.title}
+              className="group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-black/10 bg-[#f8f7f2] transition duration-200 hover:-translate-y-0.5 hover:border-black/20 hover:bg-white hover:shadow-sm"
+            >
+              {link.icon ? (
+                <Image
+                  src={link.icon}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                />
+              ) : (
+                <span className="text-[0.65rem] font-black text-black/55">
+                  {getLinkFallback(link.title)}
+                </span>
+              )}
+            </SmartLink>
+          ))}
+        </nav>
       </header>
 
-      <div className="min-w-0 rounded-[1.5rem] border border-black/10 bg-[#202126] p-5 text-white shadow-sm sm:p-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#7ddbd4]">
-              Intro
-            </p>
-            <h2 className="mt-2 text-[1.35rem] font-black leading-tight sm:text-2xl">
-              Agentic software engineer and creator building public experiments around AI workflows.
-            </h2>
-          </div>
+      <section className="linktree-enter linktree-enter-delay min-w-0 rounded-[1.5rem] border border-black/10 bg-[#202126] p-5 text-white shadow-sm sm:p-6">
+        <div className="border-b border-white/15 pb-4">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#7ddbd4]">
+            Start here
+          </p>
+          <h2 className="mt-2 text-[1.35rem] font-black leading-tight sm:text-2xl">
+            Learn the system, then get help applying it.
+          </h2>
         </div>
-      </div>
+
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {resourceOffers.map((offer) =>
+            offer.kind === "lead-magnet" ? (
+              <FreeGuideModal
+                key={offer.title}
+                eyebrow={offer.eyebrow}
+                title={offer.title}
+                detail={offer.detail}
+                meta={offer.meta}
+                cta={offer.cta}
+              />
+            ) : (
+              <SmartLink
+                key={offer.title}
+                href={offer.href}
+                className="group flex min-h-44 flex-col rounded-2xl bg-white p-4 text-[#141414] transition duration-200 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <span className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#008b93]">
+                  {offer.eyebrow}
+                </span>
+                <span className="mt-3 block text-xl font-black leading-tight">{offer.title}</span>
+                <span className="mt-2 block text-sm leading-5 text-black/58">{offer.detail}</span>
+                <span className="mt-auto flex items-center justify-between border-t border-black/10 pt-4 text-sm font-bold">
+                  <span>{offer.meta}</span>
+                  <span className="text-right text-black/45 transition group-hover:text-black">
+                    {offer.cta}
+                  </span>
+                </span>
+              </SmartLink>
+            ),
+          )}
+        </div>
+
+        <div className="mt-6 border-t border-white/15 pt-5">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#7ddbd4]">
+            Book a 1:1 with me
+          </p>
+        </div>
+
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {consultationOffers.map((offer) => (
+            <SmartLink
+              key={offer.href}
+              href={offer.href}
+              className="group flex min-h-48 flex-col rounded-2xl bg-white p-4 text-[#141414] transition duration-200 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <span className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#315fd6]">
+                {offer.eyebrow}
+              </span>
+              <span className="mt-3 block text-xl font-black leading-tight">{offer.title}</span>
+              <span className="mt-2 block text-sm leading-5 text-black/58">{offer.detail}</span>
+              <span className="mt-auto flex items-center justify-between border-t border-black/10 pt-4 text-sm font-bold">
+                <span>{offer.meta}</span>
+                <span className="text-black/45 transition group-hover:text-black">Book →</span>
+              </span>
+            </SmartLink>
+          ))}
+        </div>
+      </section>
 
       {sections.map((section) => (
         <section

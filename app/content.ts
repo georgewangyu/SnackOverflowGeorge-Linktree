@@ -51,7 +51,8 @@ export const site = {
   
   about: {
     photo: getImagePath("profile"),
-    blurb: "Software engineer & creator. I build things that make life a little more curious.",
+    blurb:
+      "FAANG software engineer with 5+ years building production software and AI products. I teach practical AI automation with Claude Code and Codex.",
     linkText: "",
     linkHref: "",
   },
