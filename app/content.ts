@@ -112,7 +112,7 @@ export const site = {
     {
       title: "My Substack",
       iconKey: "substack" as keyof typeof iconMap,
-      href: "https://snackoverflowgeorge.substack.com/",
+      href: "https://snackoverflowgeorge.substack.com/subscribe",
     },
     {
       title: "My X",

@@ -42,7 +42,7 @@ const sections = [
     label: "Channels",
     title: "Short-form and long-form channels",
     links: socialLinks.filter((link) =>
-      ["My TikTok", "My Instagram", "My YouTube"].includes(link.title),
+      ["My TikTok", "My Instagram", "My YouTube", "My Substack"].includes(link.title),
     ),
   },
   {
