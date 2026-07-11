@@ -121,7 +121,7 @@ PLAUSIBLE_DOMAIN=your-domain.com
 - Accessibility features
 - Auto-discovery system for images/icons
 - Real profile photo and social icons
-- Updated links (affiliate links for personal items, bit.ly for socials)
+- Updated links (affiliate links for personal items, direct platform links for socials)
 
 ✅ **Completed (T12):**
 - ✅ Theme system fixed (light/dark mode working)

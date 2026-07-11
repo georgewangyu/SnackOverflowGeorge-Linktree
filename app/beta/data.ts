@@ -58,6 +58,7 @@ export const socialLinks = site.socials.filter((link) =>
     "My TikTok",
     "My Instagram",
     "My YouTube",
+    "My Substack",
     "My X",
     "My LinkedIn",
     "My GitHub",

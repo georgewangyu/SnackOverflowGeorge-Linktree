@@ -9,6 +9,7 @@ const iconMap = {
   tiktok: "tiktok",
   email: "email.svg",
   blog: "blog",
+  substack: "substack.svg",
   x: "x.svg",
   discord: "discord",
   instagram: "instagram",
@@ -91,22 +92,27 @@ export const site = {
     {
       title: "My TikTok",
       iconKey: "tiktok" as keyof typeof iconMap,
-      href: "https://bit.ly/snackoverflowgeorgetiktok",
+      href: "https://www.tiktok.com/@snackoverflowgeorge",
     },
     {
       title: "My Instagram",
       iconKey: "instagram" as keyof typeof iconMap,
-      href: "https://bit.ly/snackoverflowgeorgeIG",
+      href: "https://www.instagram.com/snackoverflowgeorge/",
     },
     {
       title: "My YouTube",
       iconKey: "youtube" as keyof typeof iconMap,
-      href: "https://bit.ly/snackoverflowgeorgeyt",
+      href: "https://www.youtube.com/@snackoverflowgeorge?sub_confirmation=1",
     },
     {
       title: "My Discord",
       iconKey: "discord" as keyof typeof iconMap,
-      href: "https://bit.ly/discordsnackoverflowgeorge",
+      href: "https://discord.com/invite/u8E2mR6Pjy",
+    },
+    {
+      title: "My Substack",
+      iconKey: "substack" as keyof typeof iconMap,
+      href: "https://snackoverflowgeorge.substack.com/",
     },
     {
       title: "My X",
