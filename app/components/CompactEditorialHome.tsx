@@ -25,12 +25,6 @@ const actionLinks = primaryActions.map((action) => ({
 
 const workLinks = [
   {
-    title: "Build Wheel",
-    detail: "Spin a topic and explore the AI agent harness leaderboard",
-    href: "https://buildwheel.snackoverflowgeorge.com/",
-    icon: undefined,
-  },
-  {
     title: "SnackVoice",
     detail: "AI captions and voice workflow product",
     href: "https://snackvoice.snackoverflowgeorge.com",
@@ -140,6 +134,24 @@ export function CompactEditorialHome() {
           ))}
         </nav>
       </header>
+
+      <SmartLink
+        href="https://buildwheel.snackoverflowgeorge.com/"
+        className="linktree-enter linktree-enter-delay group flex min-h-24 min-w-0 items-center gap-3 rounded-[1.6rem] border border-[#7c6feb]/65 bg-[#201f20] px-4 py-4 text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-[#9b91fa] hover:shadow-xl sm:min-h-28 sm:gap-5 sm:rounded-full sm:px-6"
+      >
+        <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl border border-white/20 sm:h-16 sm:w-16">
+          <Image src="/icons/build-wheel.svg" alt="" fill className="object-cover" sizes="64px" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-xl font-black leading-tight sm:text-2xl">Build Wheel</span>
+          <span className="mt-1 block text-xs leading-snug text-white/65 sm:text-sm">
+            Spin a tech topic · Explore AI agent harnesses
+          </span>
+        </span>
+        <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#7c6feb] text-lg font-bold transition duration-200 group-hover:translate-x-0.5 group-hover:bg-[#9b91fa] sm:h-10 sm:w-10">
+          ↗
+        </span>
+      </SmartLink>
 
       <section className="linktree-enter linktree-enter-delay min-w-0 rounded-[1.5rem] border border-black/10 bg-[#202126] p-5 text-white shadow-sm sm:p-6">
         <div className="border-b border-white/15 pb-4">
