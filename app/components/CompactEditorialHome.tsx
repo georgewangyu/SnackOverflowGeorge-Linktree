@@ -25,6 +25,12 @@ const actionLinks = primaryActions.map((action) => ({
 
 const workLinks = [
   {
+    title: "Build Wheel",
+    detail: "Spin a topic and explore the AI agent harness leaderboard",
+    href: "https://buildwheel.snackoverflowgeorge.com/",
+    icon: undefined,
+  },
+  {
     title: "SnackVoice",
     detail: "AI captions and voice workflow product",
     href: "https://snackvoice.snackoverflowgeorge.com",
