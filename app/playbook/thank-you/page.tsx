@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 };
 
 type PlaybookThankYouPageProps = {
-  searchParams?: {
+  searchParams?: Promise<{
     session_id?: string | string[];
-  };
+  }>;
 };
 
 export default async function PlaybookThankYouPage({
@@ -29,7 +29,7 @@ export default async function PlaybookThankYouPage({
 }: PlaybookThankYouPageProps) {
   noStore();
 
-  const sessionId = normalizeCheckoutSessionId(searchParams?.session_id);
+  const sessionId = normalizeCheckoutSessionId((await searchParams)?.session_id);
   const access = await verifyPlaybookPurchase(sessionId);
 
   return (
