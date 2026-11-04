@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Agent Loops Presentation | SnackOverflowGeorge",
@@ -491,7 +492,7 @@ export default function LoopsPage() {
       `}</style>
 
       <nav className="deckNav">
-        <a href="/">SnackOverflowGeorge</a>
+        <Link href="/">SnackOverflowGeorge</Link>
         <div className="navLinks">
           <a href="#sources">Sources</a>
           <a href="#outline">Outline</a>

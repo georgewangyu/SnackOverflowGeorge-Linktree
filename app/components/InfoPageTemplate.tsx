@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 /**
  * Reusable template for info pages with image + bio layout
@@ -61,12 +62,12 @@ export function InfoPageTemplate({ image, title, subtitle, sections }: InfoPageT
 
         {/* Back Link */}
         <div className="mt-16">
-          <a
+          <Link
             href="/"
             className="inline-block font-mono text-foreground-light dark:text-foreground-dark hover:opacity-70 transition-opacity"
           >
             ← back
-          </a>
+          </Link>
         </div>
       </div>
     </div>
